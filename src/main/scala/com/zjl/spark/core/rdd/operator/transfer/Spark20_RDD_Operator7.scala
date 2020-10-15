@@ -26,11 +26,12 @@ object Spark20_RDD_Operator7 {
 
     //如果数据被打乱重新组合，那么数据就可能出现不均匀的情况
     //groupBy方法会导致数据不均匀，产生shuffle操作。如果想改变分区，可以传递参数
-    val rdd: RDD[(Int, Iterable[Int])] = dataRDD.groupBy(
-      num => {
-        num % 2
-      }, 2
-    )
+
+//    val rdd: RDD[(Int, Iterable[Int])] = dataRDD.groupBy[Int](
+//      num => {
+//        num % 2
+//      }, 2
+//    )
 
     //glom=>分区转换为一个array
     //    println("分组后的数据分区的数量="+rdd.glom().collect().length)
@@ -40,7 +41,7 @@ object Spark20_RDD_Operator7 {
     //     }
     //   }
 
-    rdd.saveAsTextFile("output")
+//    rdd.saveAsTextFile("output")
 
     sc.stop()
 

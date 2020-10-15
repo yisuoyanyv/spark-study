@@ -15,7 +15,7 @@ object Spark36_RDD_Operator18 {
     val rdd=sc.makeRDD(
       List(
         ("cba","消息1"),("cba","消息2"),("cba","消息3"),
-        ("nba","消息1"),("wnba","消息1"),("nba","消息1"),
+        ("nba","消息1"),("wnba","消息1"),("nba","消息1")
       ),1
     )
     val rdd1=rdd.partitionBy(new HashPartitioner(3))
