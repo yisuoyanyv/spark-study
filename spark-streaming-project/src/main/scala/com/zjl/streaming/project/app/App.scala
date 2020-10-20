@@ -15,6 +15,7 @@ trait App {
   def main(args: Array[String]): Unit = {
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("App")
     val ssc = new StreamingContext(conf, Seconds(3))
+    ssc.checkpoint("./ck1020")
 
 
 
